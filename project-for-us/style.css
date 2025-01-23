@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --pink-50: #fdf2f8;
+    --pink-100: #fce7f3;
+    --pink-600: #db2777;
+    --pink-700: #be185d;
+    --purple-100: #f3e8ff;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-500: #6b7280;
+    --gray-700: #374151;
+    --red-600: #dc2626;
+    --red-700: #b91c1c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, var(--pink-100), var(--purple-100));
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header */
+header {
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    padding: 1.5rem 1rem;
+}
+
+h1 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--pink-600);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Music Toggle */
+.music-toggle {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background: var(--pink-600);
+    color: white;
+    padding: 0.75rem;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    z-index: 50;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s;
+}
+
+.music-toggle:hover {
+    background: var(--pink-700);
+}
+
+/* Counter Section */
+.counter-section {
+    padding: 3rem 1rem;
+}
+
+.counter-card {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.counter-card h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.counter-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .counter-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.counter-item {
+    background: var(--pink-50);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.counter-value {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--pink-600);
+}
+
+.counter-label {
+    color: var(--gray-500);
+}
+
+/* Memories Section */
+.memories-section {
+    padding: 3rem 1rem;
+}
+
+.memories-card {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.memories-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.memories-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Buttons */
+.btn-primary {
+    background: var(--pink-600);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background: var(--pink-700);
+}
+
+.btn-primary:disabled {
+    background: var(--pink-300);
+    cursor: not-allowed;
+}
+
+.btn-secondary {
+    background: var(--gray-200);
+    color: var(--gray-700);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+    background: var(--gray-300);
+}
+
+/* Memory Form */
+.memory-form {
+    background: var(--pink-50);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.memory-form.hidden {
+    display: none;
+}
+
+.memory-form h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.form-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    margin-bottom: 0.25rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--gray-200);
+    border-radius: 0.5rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--pink-600);
+    box-shadow: 0 0 0 3px rgba(219, 39, 119, 0.1);
+}
+
+.photo-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.preview-container {
+    background: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16rem;
+}
+
+#imagePreview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+#imagePreview.hidden {
+    display: none;
+}
+
+#previewPlaceholder {
+    color: var(--gray-500);
+}
+
+.form-buttons {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Memories Grid */
+.memories-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .memories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .memories-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.memory-card {
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.memory-card img {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+}
+
+.memory-card-content {
+    padding: 1rem;
+}
+
+.memory-date {
+    font-size: 0.875rem;
+    color: var(--gray-500);
+    margin-bottom: 0.5rem;
+}
+
+.memory-description {
+    color: var(--gray-700);
+}
+
+.delete-memory {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: var(--red-600);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s, background-color 0.2s;
+}
+
+.memory-card:hover .delete-memory {
+    opacity: 1;
+}
+
+.delete-memory:hover {
+    background: var(--red-700);
+}
+
+.hidden {
+    display: none;
+}
