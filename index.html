@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa História</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Background Music -->
+        <audio id="bgMusic" src="./src/New West - Those Eyes (Home Session).mp3" loop></audio>
+        <button id="musicToggle" class="music-toggle" title="Tocar música">
+            <i data-lucide="volume-2"></i>
+        </button>
+
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <h1>
+                    <i data-lucide="heart"></i>
+                    Nossa História
+                </h1>
+            </div>
+        </header>
+
+        <!-- Counter Section -->
+        <section class="counter-section">
+            <div class="container">
+                <div class="counter-card">
+                    <h2>
+                        <i data-lucide="clock"></i>
+                        Tempo Juntos
+                    </h2>
+                    <div class="counter-grid">
+                        <div class="counter-item">
+                            <div id="days" class="counter-value">0</div>
+                            <div class="counter-label">Dias</div>
+                        </div>
+                        <div class="counter-item">
+                            <div id="hours" class="counter-value">0</div>
+                            <div class="counter-label">Horas</div>
+                        </div>
+                        <div class="counter-item">
+                            <div id="minutes" class="counter-value">0</div>
+                            <div class="counter-label">Minutos</div>
+                        </div>
+                        <div class="counter-item">
+                            <div id="seconds" class="counter-value">0</div>
+                            <div class="counter-label">Segundos</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Memories Section -->
+        <section class="memories-section">
+            <div class="container">
+                <div class="memories-card">
+                    <div class="memories-header">
+                        <h2>
+                            <i data-lucide="image"></i>
+                            Nossas Memórias
+                        </h2>
+                        <button id="addMemoryBtn" class="btn-primary">
+                            <i data-lucide="plus"></i>
+                            Adicionar Memória
+                        </button>
+                    </div>
+
+                    <!-- Add Memory Form -->
+                    <div id="addMemoryForm" class="memory-form hidden">
+                        <h3>Nova Memória</h3>
+                        <div class="form-grid">
+                            <div class="form-inputs">
+                                <div class="form-group">
+                                    <label>Data da Memória</label>
+                                    <input type="date" id="memoryDate">
+                                </div>
+                                <div class="form-group">
+                                    <label>Adicionar Foto</label>
+                                    <div class="photo-buttons">
+                                        <button id="takePhotoBtn" class="btn-primary">
+                                            <i data-lucide="image"></i>
+                                            Tirar Foto
+                                        </button>
+                                        <button id="choosePhotoBtn" class="btn-primary">
+                                            <i data-lucide="image"></i>
+                                            Escolher da Galeria
+                                        </button>
+                                        <input type="file" id="cameraInput" accept="image/*" capture="environment" hidden>
+                                        <input type="file" id="fileInput" accept="image/*" hidden>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Descrição</label>
+                                    <textarea id="memoryDescription" rows="4" placeholder="Conte um pouco sobre esse momento especial..."></textarea>
+                                </div>
+                            </div>
+                            <div class="preview-container">
+                                <img id="imagePreview" class="hidden">
+                                <div id="previewPlaceholder">Preview da imagem</div>
+                            </div>
+                            <div class="form-buttons">
+                                <button id="saveMemoryBtn" class="btn-primary" disabled>Salvar Memória</button>
+                                <button id="cancelMemoryBtn" class="btn-secondary">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Memories Grid -->
+                    <div id="memoriesGrid" class="memories-grid"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="app.js"></script>
+</body>
+</html>
